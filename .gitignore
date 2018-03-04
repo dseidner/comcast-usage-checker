@@ -1,0 +1,9 @@
+# use dbconnect-example.php to enter your creds 
+# and then rename to dbconnect.php 
+
+app/dbconnect.php
+
+# use secrets-example.py to enter your creds 
+# and then rename to secrets.py 
+
+python/secrets.py

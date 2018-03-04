@@ -1,0 +1,34 @@
+<div class='container'>
+  <div class='row' ng-if="usage.length">
+    <div class='col-xs-12'>
+      <canvas class="chart chart-line" chart-data="data" chart-labels="labels"></canvas>
+    </div>
+  </div>
+  <div class='row'>
+    <div class='col-xs-12'>
+      <table datatable="ng" class="table table-striped table-bordered" ng-if="usage.length" dt-options="options">
+          <thead>
+          <tr>
+              <th>ID</th>
+<!--              <th>Unix TS</th>-->
+              <th>Month</th>
+              <th>GB</th>
+              <th>Created TS</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr ng-repeat="u in usage">
+              <td>{{ u.id }}</td>
+<!--              <td>{{ u.time_key }}</td>-->
+              <td>{{ u.month | amDateFormat:'MMMM YYYY' }}</td>
+              <td>{{ u.gb }}</td>
+              <td>{{ u.created_ts | amUtc | amLocal | amDateFormat:'dddd, MMMM Do YYYY, h:mm:ss a Z' }}</td>
+          </tr>
+          </tbody>
+      </table>
+      <span ng-if="!usage.length">Loading...
+        <span ng-if="customMonth.length"><br/>Woops, nothing found for {{customMonth}}.</span>
+      </span>
+    </div>
+  </div>
+</div>
