@@ -7,6 +7,7 @@ import pymysql.cursors
 import secrets as sec
 
 # get unix timestamp and change from float to integer to string
+# for sql insert later
 unix_time = datetime.now()
 unix_secs = str(int(mktime(unix_time.timetuple())))
 
@@ -95,5 +96,3 @@ finally:
 
 # Quit the browser used by selenium
 browser.quit()
-
-# on server: comcast / 7jQB2igc4GR4B4Kl
